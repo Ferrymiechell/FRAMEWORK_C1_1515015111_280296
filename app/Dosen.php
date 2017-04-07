@@ -8,14 +8,15 @@ class Dosen extends Model
 {
 	
 	protected $table = 'dosen';
-	protected $fillable =['nama','nip','alamat','pengguna_id'];
+	protected $fillable =['nama','nip','alamat'];
+	// protected $guarded =['id'];
 
 	public function pengguna(){
 		return $this->belongsTo(Pengguna::class);
 	}
 
 	public function dosen_matakuliah(){
-		return $this->hasMany(Dosen_Matakuliah::class);
+		return $this->hasMany(Dosen_Matakuliah::class,'dosen_id');
 	}
 
 	public function getUsernameAttribute(){

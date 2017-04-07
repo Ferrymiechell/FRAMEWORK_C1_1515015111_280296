@@ -26,7 +26,7 @@ class Dosen_MatakuliahController extends Controller
         $dosen = new Dosen;
         $matakuliah = new Matakuliah;
         return view('dosen_matakuliah.tambah',compact('dosen','matakuliah'));
-        return $this->simpan();
+        // return $this->simpan();
     }
 
     public function simpan(Request $input)

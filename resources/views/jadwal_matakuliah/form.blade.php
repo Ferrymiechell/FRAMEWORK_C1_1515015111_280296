@@ -8,7 +8,7 @@
 <div class="form-group">
 	<label class="col-sm-2 control-label" id="dosen_matakuliah_id">Matakuliah</label>
 	<div class="col-sm-10">
-		{!! Form::select('dosen_matakuliah_id',$dosen_matakuliah->listDosenDanMatakuliah,null,['class'=>'form-control','id'=>'dosen_matakuliah_id','placeholder'=>"Matakuliah"]) !!}	
+		{!! Form::select('dosen_matakuliah_id',$dosenMatakuliah->listDosenDanMatakuliah(),null,['class'=>'form-control','id'=>'dosen_matakuliah_id','placeholder'=>"Matakuliah"]) !!}	
 	</div>
 </div>
 <div class="form-group">

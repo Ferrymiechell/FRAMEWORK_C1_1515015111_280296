@@ -8,7 +8,7 @@ class Mahasiswa extends Model
 {
 	protected $table ='mahasiswa';
 	protected $fillable =['nama','nim','alamat','pengguna_id'];
-	// protected guarded =['id'];
+	protected $guarded =['id'];
 
 	public function Pengguna()
 	{
@@ -19,7 +19,12 @@ class Mahasiswa extends Model
 	return $this->pengguna->username;
 	}
 
-	public function listMahasiswaDanNim()
+	public function jadwal_matakuliah()
+    {
+        return $this->hasMany(Jadwal_Matakuliah::class,'mahasiswa_id');
+    }
+
+    public function listMahasiswaDanNim()
 	{
 		$out = [];
 		foreach ($this->all() as $mhs) {
@@ -27,9 +32,4 @@ class Mahasiswa extends Model
 		}
 		return $out;
 	}
-
-	public function jadwal_matakuliah()
-    {
-        return $this->hasMany(Jadwal_Matakuliah::class);
-    }
 }

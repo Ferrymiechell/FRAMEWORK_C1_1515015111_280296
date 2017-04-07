@@ -10,6 +10,6 @@ class Ruangan extends Model
    protected $fillable =['title'];
 
    public function jadwal_matakuliah(){
-   	return $this->hasMany(Jadwal_Matakuliah::class);
+   	return $this->hasMany(Jadwal_Matakuliah::class,'ruangan_id');
    }
 }

@@ -18,7 +18,7 @@
 		<tr>
 			<td>Nama Dosen</td>
 			<td>:</td>
-			<td>{{ $jadwal_matakuliah->dosen_matakuliah->nip }}</td>
+			<td>{{ $jadwal_matakuliah->dosen_matakuliah->dosen->nama }}</td>
 		</tr>
 		<tr>
 			<td>NIP Dosen</td>

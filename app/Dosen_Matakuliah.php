@@ -13,17 +13,17 @@ class Dosen_Matakuliah extends Model
 
     public function Dosen()
     {
-        return $this->belongsTo(Dosen::class);
+        return $this->belongsTo(Dosen::class,'dosen_id');
     }
 
     public function Matakuliah()
     {
-        return $this->belongsTo(Matakuliah::class);
+        return $this->belongsTo(Matakuliah::class,'matakuliah_id');
     }
 
        public function Jadwal_Matakuliah()
     {
-        return $this->hasMany(Jadwal_Matakuliah::class);
+        return $this->hasMany(Jadwal_Matakuliah::class,'dosen_matakuliah_id');
     }
 
     public function getNamadosenAttribute(){
@@ -42,7 +42,7 @@ class Dosen_Matakuliah extends Model
     {
     	$out = [];
     	foreach ($this->all() as $dsnMtk) {
-    		$out[$dsnMtk->id] = "{$dsnMtk->dosen->nama} {$dsnMtk->dosen->nip} (Matakuliah {$dsnMtk->matakuliah->title})";
+    		$out[$dsnMtk->id] = "{$dsnMtk->dosen->nama} (Matakuliah {$dsnMtk->matakuliah->title})";
     	}
     	return $out;
     }
